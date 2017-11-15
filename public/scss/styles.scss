@@ -3,7 +3,7 @@
 $default-padding: 16px;
 $default-margin: 16px;
 $teal: rgb(00, 150, 136);
-$slate: rgb(36, 42, 48);
+$slate: rgb(38, 50, 56);
 $transition-time: .5s;
 
 body {
@@ -51,6 +51,7 @@ header {
     h1 {
         position: absolute;
         padding-left: $default-padding;
+        text-shadow: 0px 0px 5px black;
         color: white;
     }
 }
@@ -84,15 +85,15 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    h1, h3, p {
+    h1, h2, p {
         position: relative;
         text-align: right;
         color: white;
     }
     h1 {
         font-weight: 700;
-        font-size: 2.5em;
-        margin-bottom: -.5em;
+        font-size: 3em;
+        margin-bottom: -.4em;
     }
     .job-description {
         opacity: 0;
