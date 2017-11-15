@@ -80,7 +80,7 @@ function toggleMobileMenu() {
 		$('.mobile-menu').addClass('fa-bars').removeClass('fa-times').css('color', 'black');;
 		
 		setTimeout(() => {
-			$('.banner').css('display', 'block');
+			$('.banner').css('display', 'flex');
 			$('.nav-links').css('margin-bottom', '0');
 		} , 500);
 	}
