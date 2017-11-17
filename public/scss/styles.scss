@@ -116,7 +116,7 @@ header {
         padding: $double-padding $default-padding $default-padding $default-padding;
         transition: $transition-time;
         text-align: left;
-        max-width: calc(100% - $double-padding);
+        max-width: calc(100% - 26.666px);
     }
 }
 
