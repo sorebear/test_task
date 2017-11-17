@@ -12,9 +12,9 @@ $.ajax({
 				employees.splice(Math.floor(Math.random() * employees.length), 1)[0]
 			);
 			const name = 
-				`${randomThreeEmployees[i]['first_name']} 
-				${randomThreeEmployees[i]['last_name']}`;
-			$(`.team-image-${i} .employee-name`).text(name);
+				randomThreeEmployees[i]['first_name'] + " " +
+				randomThreeEmployees[i]['last_name'];
+			$(".team-image-" + i + " .employee-name").text(name);
 		}
 		// Once the 3 random employees are chosen, 
 		// the other 2 AJAX calls and invoked with that information
@@ -35,9 +35,9 @@ function getImages(employeeArray) {
 			let imageFolder = result["images-folder"];
 			for (let i = 0; i < employeeArray.length; i++) {
 				const image = $(
-					`<img src="${imageFolder + employeePictures[employeeArray[i]["id"] - 1]["full"]}">`
+					'<img src="' + imageFolder + employeePictures[employeeArray[i]["id"] - 1]["full"] + '">'
                 );
-                $(`.team-image-${i}`).append(image);
+                $(".team-image-" + i).append(image);
 			}
 		},
 		error: function() {
@@ -57,8 +57,8 @@ function getTitles(employeeArray) {
 			for (let i = 0; i < employeeArray.length; i++) {
 				const title = employeeTitles[employeeArray[i]["id"] - 1]["title"];
 				const description = employeeTitles[employeeArray[i]["id"] - 1]["description"];
-				$(`.team-image-${i} .employee-title`).text(title);
-				$(`.team-image-${i} .job-description`).text(description);
+				$(".team-image-" + i + " .employee-title").text(title);
+				$(".team-image-" + i + " .job-description").text(description);
 			}
 		},
 		error: function() {
