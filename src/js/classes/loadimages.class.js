@@ -1,19 +1,9 @@
 class LoadImages {
   constructor(initFunction) {
     this.initFunction = initFunction;
-    this.nameQuery = null;
-    this.imageQuery = null;
-    this.descriptionQuery = null;
   }
 
-  init() {
-    if (this.initFunction === 'getThreeNames') {
-      this.getThreeNames();
-    } else {
-      this.getAllNames();
-    }
-  }
-
+  // First Ajax Call and Function Gets The Employee Names and Randomly Chooses Three To Display
   getThreeNames() {
     $.ajax({
       url: 'https://techi.envivent.com/names.json',
@@ -28,7 +18,7 @@ class LoadImages {
             randomThreeEmployees[i]['first_name'] + ' ' +
             randomThreeEmployees[i]['last_name'];
           $('.team-image-' + i + ' .card__overlay--employee-name').text(name);
-          $('.team-image-' + i + ' .card__profile-link').setAttribute('href', 'employee_bio.php?');
+          $('.team-image-' + i + ' .card__profile-link')[0].setAttribute('href', 'employee_bio.php?name=' + name);
         }
         // Once the 3 random employees are chosen, 
         // the other 2 AJAX calls and invoked with that information
@@ -46,16 +36,18 @@ class LoadImages {
       url: 'https://techi.envivent.com/names.json',
       success: result => {
         const employees = result.employees;
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < employees.length; i++) {
           const name = 
               employees[i]['first_name'] + ' ' +
               employees[i]['last_name'];
           $('.team-image-' + i + ' .card__overlay--employee-name').text(name);
+          const linkEl = $('.team-image-' + i + ' .card__profile-link')[0]; 
+          const query = linkEl.getAttribute('href');
+          linkEl.setAttribute('href', query + '&name=' + name); 
         }
         // Once the 3 random employees are chosen, 
         // the other 2 AJAX calls and invoked with that information
         this.getTitles(employees);
-        this.getImages(employees);
       },
       error: () => {
         console.log('There was an error getting the employees information');
@@ -71,10 +63,12 @@ class LoadImages {
         const employeePictures = result.employees;
         let imageFolder = result['images-folder'];
         for (let i = 0; i < employeeArray.length; i++) {
-          const image = $(
-              '<img class="card__image" src="' + imageFolder + employeePictures[employeeArray[i]['id'] - 1]['full'] + '">'
-          );
+          const imagePath = imageFolder + employeePictures[employeeArray[i]['id'] - 1]['full'];
+          const image = $('<img class="card__image" src="' + imagePath  + '">');
           $('.team-image-' + i).append(image);
+          const linkEl = $('.team-image-' + i + ' .card__profile-link')[0]; 
+          const query = linkEl.getAttribute('href');
+          linkEl.setAttribute('href', query + '&img=' + imagePath); 
         }
       },
       error: () => {
@@ -95,6 +89,9 @@ class LoadImages {
           const description = employeeTitles[employeeArray[i]['id'] - 1]['description'];
           $('.team-image-' + i + ' .card__overlay--employee-title').text(title);
           $('.team-image-' + i + ' .card__overlay--job-description').text(description);
+          const linkEl = $('.team-image-' + i + ' .card__profile-link')[0]; 
+          const query = linkEl.getAttribute('href');
+          linkEl.setAttribute('href', query + '&title=' + title + '&job-des=' + description); 
         }
       },
       error: () => {

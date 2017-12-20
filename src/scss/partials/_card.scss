@@ -1,9 +1,3 @@
-.team-members {
-    display: flex;
-    background-color: white;
-    padding-right: $default-padding;
-}
-
 .card {
     width: 33.33%;
     display: flex;
@@ -39,14 +33,17 @@
 
         &--employee-name {
             font-weight: 700;
-            font-size: 36pt;
-            margin-bottom: -.4em;
+            font-size: 30pt;
+            line-height: 3rem;
+            margin-bottom: -.8rem;
             text-transform: uppercase;
         }
 
+        
+
         &--employee-title {
             text-transform: lowercase;
-            font-size: 18pt;
+            font-size: 16pt;
         }
 
         &--job-description {

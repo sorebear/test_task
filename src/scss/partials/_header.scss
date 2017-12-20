@@ -15,7 +15,9 @@
         height: 61px;
     }
 
-    &__mobile-menu {
+    &__mobile-menu--checkbox,
+    &__mobile-menu--icon,
+    &__mobile-menu--label {
         display: none;
     }
 
@@ -26,18 +28,6 @@
 
         ul {
             animation: none;
-        }
-        
-        li {
-            color: black;
-            font-size: 14pt;
-            margin: 0 10px;
-            display: inline;
-        }
-
-        li:hover, 
-        li:active {
-            color: $teal;
         }
     }    
 }
@@ -60,11 +50,51 @@
         }
 
         &__mobile-menu {
-            display: inline;
-            position: absolute;
-            font-size: 30pt;
-            right: $default-margin;
-            top: 24.328px;
+            
+            &--label {
+                display: inline;
+            }
+
+            &--icon {
+                display: inline;
+                position: absolute;
+                font-size: 30pt;
+                right: $default-margin;
+                top: 24.328px;
+            }
+
+            &--checkbox {
+
+                ~ nav ul {
+                    top: -100%;
+                }
+
+                + label i.fa-times {
+                    display: none;
+                }
+
+                + label i.fa-bars {
+                    display: inline;
+                }
+
+            } 
+
+            &--checkbox:checked {
+
+                ~ nav ul {
+                    top: 0;
+                }
+
+                + label i.fa-times {
+                    display: inline;
+                    color: $teal;
+                }
+
+                + label i.fa-bars {
+                    display: none;
+                }    
+            }
+            
         }
 
         &__nav {
@@ -76,7 +106,6 @@
             overflow: hidden;
 
             ul {
-                top: -100%;
                 position: absolute;
                 height: 0;
                 width: 100%;
@@ -90,10 +119,6 @@
                     margin: 0;
                     text-align: center;
                     border-top: 1px solid black;
-                }
-
-                li:last-child {
-                    border-bottom: 1px solid black;
                 }
             }
         }

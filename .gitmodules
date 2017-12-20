@@ -13,3 +13,6 @@
 [submodule "src/app/modules/url-class"]
 	path = src/app/modules/url-class
 	url = https://github.com/sleepymustache/module-urlclass
+[submodule "src/app/modules/mailer"]
+	path = src/app/modules/mailer
+	url = https://github.com/sleepymustache/module-mailer

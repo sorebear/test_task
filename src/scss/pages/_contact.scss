@@ -1,0 +1,67 @@
+.contact {
+
+   .form {
+
+      text-align: center;
+
+      &__group {
+         display: flex;
+         flex-direction: column-reverse;
+         margin: 1rem 0;
+      }
+
+      &__label,
+      &__input {
+         display: block;
+         text-align: left;
+         width: 87.5%;
+         margin: auto;
+      }
+
+      &__label {
+         padding: 1rem 0;
+         transition: all .5s;
+         color: $teal;
+      }
+
+      &__input {
+         padding: 0 .5rem .5rem .5rem;
+         border: none;
+         transition: all .3s;
+         background-color: transparent;
+         color: white;
+         resize: none;
+         border-bottom: 3px solid dimgrey;
+         overflow: hidden;
+      }
+
+      &__input:focus {
+         outline: none;
+         border-bottom: 3px solid $teal;
+      }
+
+      &__input:placeholder-shown ~ .form__label {
+         visibility: hidden;
+         opacity: 0;
+         transform: translateY(75%);
+         color: dimgrey;
+      }
+
+      &__submit,
+      &__submit:hover,
+      &__submit:active {
+         text-align: center;
+         color: white;
+         background-color: $teal;
+         padding: 1rem 3rem;
+         margin: 1rem;
+         border: none;
+         outline: none;
+         border-radius: 3px;
+      }
+
+      &__submit:hover {
+         background-color: lighten($color: $teal, $amount: 5)
+      }
+   }
+}

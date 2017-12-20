@@ -10,13 +10,19 @@
    margin-bottom: 100px;
 
    &__media-icons {
-       position: absolute;
-       right: $default-margin;
-       color: white;
-       font-size: 24pt;
-       i:hover, i:active {
-           color: $teal;
-       }
+        position: absolute;
+        right: $default-margin;
+        color: white;
+        font-size: 24pt;
+        
+        i {
+            transition: all .3s;
+        }
+
+        i:hover, 
+        i:active {
+            color: $teal;
+        }
    }
 }
 

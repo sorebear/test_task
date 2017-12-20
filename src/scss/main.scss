@@ -14,5 +14,7 @@ $desktop-breakpoint: 767px;
 
 // Pages
 
+@import 'pages/bio';
+@import 'pages/contact';
 @import 'pages/home';
-@import 'pages/our_employees';
+@import 'pages/our_team';

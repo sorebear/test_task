@@ -15,8 +15,6 @@
 	<script>(self == top) ?	document.documentElement.style.display = 'block' : top.location = self.location;</script>
 
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 	<!-- JAVASCRIPT -->
@@ -39,9 +37,15 @@
 	<div class="wrapper">
 		<header class="header">
         <div class="header__logo-container">
-            <img class="header__logo" src="images/logo.png" alt="techi-technology logo">
+			<a href="index.php">
+            	<img class="header__logo" src="images/logo.png" alt="techi-technology logo">
+			</a>
         </div>
-        <i class="fa fa-bars header__mobile-menu" aria-hidden="true"></i>
+		<input class="header__mobile-menu--checkbox" id="mobile-menu" type="checkbox"></input>
+        <label class="header__mobile-menu--label" for="mobile-menu">
+			<i class="fa fa-bars header__mobile-menu--icon" aria-hidden="true"></i>
+			<i class="fa fa-times header__mobile-menu--icon" aria-hidden="true"></i>
+		</label>
         <nav class="header__nav">
             {{ top_nav }}
         </nav>

@@ -2,5 +2,4 @@
 
 {{ content }}
 
-
 {{ #include footer }}

@@ -1,7 +1,7 @@
 .banner {
    position: relative;
    display: flex;
-   align-items: center;
+   align-items: flex-end;
    justify-content: flex-start;
 
    &__image {
@@ -12,6 +12,7 @@
       position: absolute;
       font-size: 48pt;
       padding-left: $default-padding;
+      margin: 0;
       text-shadow: 0px 0px 5px black;
       color: white;
    }
@@ -26,6 +27,7 @@
       background-image: url(../images/banner.png);
       background-size: cover;
       background-position: center;
+      align-items: center;
 
       &__image {
          display: none;

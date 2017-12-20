@@ -5,6 +5,7 @@ body {
 .learn-more {
    padding: $default-padding;
    background-color: white;
+   transition: all .3s;
    color: black;
    p {
       display: inline;
