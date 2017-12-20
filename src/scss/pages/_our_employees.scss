@@ -1,0 +1,14 @@
+.our-employees {
+   padding-top: 1rem;
+
+   &__photo-container {
+      width: 33.33%;
+      box-sizing: border-box;
+      padding: 1rem;
+      float: left;
+   }
+
+   &__photo {
+      width: 100%;
+   }
+}

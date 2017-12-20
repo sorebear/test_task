@@ -1,0 +1,101 @@
+.header {
+
+    background-color: white;
+    padding: $default-padding;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__logo-container {
+        width: 33.33%;
+    }
+
+    &__logo {
+        height: 61px;
+    }
+
+    &__mobile-menu {
+        display: none;
+    }
+
+    &__nav {
+        width: 66.66%;
+        text-align: right;
+        position: relative;
+
+        ul {
+            animation: none;
+        }
+        
+        li {
+            color: black;
+            font-size: 14pt;
+            margin: 0 10px;
+            display: inline;
+        }
+
+        li:hover, 
+        li:active {
+            color: $teal;
+        }
+    }    
+}
+
+@media screen and (max-width: 650px) {
+
+    .header {
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+
+        &__logo-container {
+            width: unset;
+            align-items: center;
+            display: flex;
+        }
+
+        &__logo {
+            padding: $default-padding;
+        }
+
+        &__mobile-menu {
+            display: inline;
+            position: absolute;
+            font-size: 30pt;
+            right: $default-margin;
+            top: 24.328px;
+        }
+
+        &__nav {
+            width: 100%;
+            position: absolute;
+            top: 87.66px;
+            height: 157.969px;
+            z-index: 1;
+            overflow: hidden;
+
+            ul {
+                top: -100%;
+                position: absolute;
+                height: 0;
+                width: 100%;
+                transition: $transition-time;
+
+                li {
+                    display: block;
+                    background-color: white;
+                    width: 100%;
+                    padding: $default-padding;
+                    margin: 0;
+                    text-align: center;
+                    border-top: 1px solid black;
+                }
+
+                li:last-child {
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+}

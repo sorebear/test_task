@@ -1,0 +1,102 @@
+.team-members {
+    display: flex;
+    background-color: white;
+    padding-right: $default-padding;
+}
+
+.card {
+    width: 33.33%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin: $default-margin 0 $default-margin $default-margin;
+
+    &__image {
+        width: 100%;
+    }
+
+    &__overlay {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 65%;
+        overflow: hidden;
+        display: flex;
+        transition: $transition-time;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        &--employee-name,
+        &--employee-title,
+        &--job-description {
+            position: relative;
+            text-align: right;
+            color: white;
+        }
+
+        &--employee-name {
+            font-weight: 700;
+            font-size: 36pt;
+            margin-bottom: -.4em;
+            text-transform: uppercase;
+        }
+
+        &--employee-title {
+            text-transform: lowercase;
+            font-size: 18pt;
+        }
+
+        &--job-description {
+            opacity: 0;
+            font-size: 12pt;
+            line-height: 18pt;
+            padding: $double-padding $default-padding $default-padding $default-padding;
+            transition: $transition-time;
+            text-align: left;
+            max-width: calc(100% - 26.666px);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            transition: $transition-time;
+            background-color: black;
+            opacity: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    &:hover,
+    &:active {
+        .card__overlay {
+            top: 17.8%;
+        }
+        .card__overlay::before {
+            opacity: .6;
+        }
+        .card__overlay--job-description {
+            opacity: 1;
+        }
+    }
+}
+
+/* Styles For Mobile View */
+
+@media screen and (max-width: 650px) {
+    
+    .team-members {
+        flex-direction: column;
+    }
+
+    .card {
+        width: unset;
+    }
+}
+    
+    
