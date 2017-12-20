@@ -1,0 +1,39 @@
+.banner {
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+
+   &__image {
+      width: 100%;
+   }
+
+   &__title {
+      position: absolute;
+      font-size: 48pt;
+      padding-left: $default-padding;
+      text-shadow: 0px 0px 5px black;
+      color: white;
+   }
+}
+
+/* Styles For Mobile View */
+
+@media screen and (max-width: 650px) {
+
+   .banner {
+      height: 157.969px - $default-padding;
+      background-image: url(../images/banner.png);
+      background-size: cover;
+      background-position: center;
+
+      &__image {
+         display: none;
+      }
+
+      &__title {
+         font-size: 30pt;
+      }
+   }
+
+}

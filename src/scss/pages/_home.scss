@@ -1,0 +1,37 @@
+body {
+   background-color: $slate;
+}
+
+.learn-more {
+   padding: $default-padding;
+   background-color: white;
+   color: black;
+   p {
+      display: inline;
+      text-decoration: underline;
+      cursor: pointer;
+   }
+}
+
+.learn-more:hover, 
+.learn-more:active {
+   color: $teal;
+}
+
+.team-members {
+   display: flex;
+   background-color: white;
+   padding-right: $default-padding;
+}
+
+/* Styles For Mobile View */
+
+@media screen and (max-width: 650px) {
+   
+   .team-members {
+       flex-direction: column;
+   }
+
+}
+   
+   
