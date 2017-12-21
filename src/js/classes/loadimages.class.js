@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 class LoadImages {
   constructor(initFunction) {
     this.initFunction = initFunction;

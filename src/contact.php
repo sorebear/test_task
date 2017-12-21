@@ -43,11 +43,9 @@ $page->bindStart();
                <label class="form__label" for="message">Your Message</label>
             </div>
             
-
             <button class="form__submit" type="submit">Send</button>
          </fieldset>
       </form>
-
 
    </main>
 

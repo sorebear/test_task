@@ -6,9 +6,8 @@ import LoadImages from './classes/loadimages.class.js';
 const SM = new Sleepy();
 
 SM.ready(() => {
-  document.getElementsByTagName('body')[0].className = (SM.isTouchDevice()) ? 'touchable' : '';
+  document.getElementsByTagName('body').className = (SM.isTouchDevice()) ? 'touchable' : '';
 });
-
 
 const loadImages = new LoadImages('getThreeNames');
 
