@@ -36,5 +36,14 @@
       clear: both;
       text-align: center;
       margin: 2rem 0;
+
+      a > li {
+         color: white;
+      }
+
+      a > li:hover {
+         color: $teal;
+      }
+      
    }
 }

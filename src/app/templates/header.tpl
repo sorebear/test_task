@@ -18,7 +18,6 @@
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 
 	<!-- JAVASCRIPT -->
-	<script src="<?= URLBASE ?>js/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script async src="<?= URLBASE ?>js/main.bundle.js"></script>
 
 	<!-- FAVICON -->
