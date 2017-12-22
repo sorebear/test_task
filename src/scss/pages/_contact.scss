@@ -4,30 +4,31 @@
 
       text-align: center;
 
-      &__group {
+      li {
          display: flex;
          flex-direction: column-reverse;
          margin: 1rem 0;
       }
 
-      &__label,
-      &__input {
+      label,
+      input[type=text],
+      textarea {
          display: block;
          text-align: left;
          width: 87.5%;
          margin: auto;
       }
 
-      &__label {
+      label {
          padding: 1rem 0;
          transition: all .5s;
          color: $teal;
       }
 
-      &__input {
+      input[type=text] {
          padding: 0 .5rem .5rem .5rem;
          border: none;
-         transition: all .3s;
+         transition: border-bottom .3s;
          background-color: transparent;
          color: white;
          resize: none;
@@ -35,22 +36,23 @@
          overflow: hidden;
       }
 
-      &__input:focus {
+      input[type=text]:focus {
          outline: none;
          border-bottom: 3px solid $teal;
       }
 
-      &__input:placeholder-shown ~ .form__label {
+      input[type=text]:placeholder-shown ~ label {
          visibility: hidden;
          opacity: 0;
          transform: translateY(75%);
          color: dimgrey;
       }
 
-      &__submit,
-      &__submit:hover,
-      &__submit:active {
-         text-align: center;
+      input[type=submit],
+      input[type=submit]:hover,
+      input[type=submit]:active {
+         width: 100px;
+         align-self: center;
          color: white;
          background-color: $teal;
          padding: 1rem 3rem;
@@ -60,7 +62,7 @@
          border-radius: 3px;
       }
 
-      &__submit:hover {
+      input[type=submit]:hover {
          background-color: lighten($color: $teal, $amount: 5)
       }
    }

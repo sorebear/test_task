@@ -6,51 +6,67 @@ $page = new \Sleepy\Template('basic');
 
 // Content
 $page->bind('header', 'Techi Technology - Contact');
+$page->bind('title', 'Techi Technology - Contact');
 $page->bind('banner', 'Contact Us');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-   $message = new \Module\Mailer\Message();
-   $fromName = empty($_POST['name']) ? 'Anonymous' : $_POST['name'];
-   $fromEmail = empty($_POST['email']) ? 'unknown@unknown.com' : $_POST['email'];
-   $messageBody = empty($_POST['message']) ? 'No Message' : $_POST['message'];
+class messages extends \Module\DB\Record {
+   public $table = 'messages';
+}
 
-   $message->addTo("sbaird@envivent.com");
-   $message->addFrom($fromEmail);
-   $message->addSubject('New Techi Technology Message - From: ' . $fromName);
-   $message->msgText($messageBody);
-   $message->send();
+$u = new messages();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      
+      $fromName = empty($_POST['txt_sender_name']) ? 'Anonymous' : $_POST['name'];
+      $fromEmail = empty($_POST['txt_sender_email']) ? 'unknown@unknown.com' : $_POST['email'];
+      $msgText = empty($_POST['txt_message']) ? 'No Message' : $_POST['message'];
+
+      $u->columns['sender_name'] = $fromName;
+      $u->columns['sender_email'] = $fromEmail;
+      $u->columns['message'] = $msgText;
+      $u->save();
+
+      // Mailer
+      // $email = new \Module\Mailer\Message();
+      // $email->addTo(EMAIL_TO);
+      // $email->addFrom($fromEmail);
+      // $email->addSubject('New Techi Technology Message - From: ' . $fromName);
+      // $email->msgText($msgText);
+      // $email->send();
+
 }
 
 $page->bindStart();
 
 ?>
 
-   <main class="contact">
-      <form class="form" action="" method="POST">
-         <fieldset>
-            <div class="form__group">
-               <input class="form__input" type="text" name="name" id="name" placeholder="Your Name" required>
-               <label class="form__label" for="name">Your Name</label>
-            </div>
-            
-            <div class="form__group">
-               <input class="form__input" type="email" name="email" id="email" placeholder="Your Email" required>
-               <label class="form__label" for="email">Your Email</label>
-            </div>
+      <main class="contact">
+            <form class="form" action="" method="POST">
 
-            <div class="form__group">
-               <textarea rows=1 class="form__input" name="message" id="message" placeholder="Your Message"></textarea required>
-               <label class="form__label" for="message">Your Message</label>
-            </div>
-            
-            <button class="form__submit" type="submit">Send</button>
-         </fieldset>
-      </form>
+            <?php 
 
-   </main>
+            $u->form(array(
+                  'sender_name' => 'Your Name',
+                  'sender_email' => 'Your Email',
+                  'message' => 'Your Message'
+            ), '', true);
+            ?>
+
+            </form>
+      </main>
 
 <?php
 
 $page->bindStop('content');
+
+// $dbg = new \Module\DB\Grid('messages', 'SELECT * FROM messages');
+
+// $dbg->exclude(array('id'));
+
+// $dbg->sortable(array(
+//       'id'
+// ));
+
+// $dbg->show();
 
 $page->show();

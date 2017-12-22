@@ -44,7 +44,7 @@ if (\Sleepy\SM::isENV(STAGE_URL)) {
 
 	// Email information
 	define('EMAIL_FROM', '');
-	define('EMAIL_TO',   '');
+	define('EMAIL_TO',   'sbaird@envivent.com');
 	define('EMAIL_CC',   '');
 	define('EMAIL_BCC',  '');
 
@@ -65,7 +65,7 @@ if (\Sleepy\SM::isENV(STAGE_URL)) {
 
 	// Email information
 	define('EMAIL_FROM', '');
-	define('EMAIL_TO',   '');
+	define('EMAIL_TO',   'sbaird@envivent.com');
 	define('EMAIL_CC',   '');
 	define('EMAIL_BCC',  '');
 

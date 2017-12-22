@@ -16,3 +16,9 @@
 [submodule "src/app/modules/mailer"]
 	path = src/app/modules/mailer
 	url = https://github.com/sleepymustache/module-mailer
+[submodule "src/app/modules/db"]
+	path = src/app/modules/db
+	url = https://github.com/sleepymustache/module-db
+[submodule "src/app/modules/db-grid"]
+	path = src/app/modules/db-grid
+	url = https://github.com/sleepymustache/module-dbgrid
