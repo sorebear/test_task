@@ -1,0 +1,34 @@
+/* Reseting Margins, Fonts, and Base Styles for Entire Document */
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Noto Sans', Arial, sans-serif;
+    font-weight: normal;
+}
+
+li, a {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    color: black;
+    font-size: 14pt;
+    margin: 0 10px;
+    display: inline;
+    transition: all .3s;
+}
+
+li:hover, 
+li:active {
+    color: $teal;
+}
+
+i {
+    cursor: pointer;
+}
+

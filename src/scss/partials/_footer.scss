@@ -1,0 +1,40 @@
+.footer {
+   
+   display: flex;
+   clear: both;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   padding: $default-padding;
+   background-color: $slate;
+   margin-bottom: 100px;
+
+   &__media-icons {
+        position: absolute;
+        right: $default-margin;
+        color: white;
+        font-size: 24pt;
+        
+        i {
+            transition: all .3s;
+        }
+
+        i:hover, 
+        i:active {
+            color: $teal;
+        }
+   }
+}
+
+@media screen and (max-width: 650px) {
+    
+    .footer {
+        flex-direction: column;
+        
+        &__media-icons {
+            position: relative;
+            margin-top: .5em;
+        }
+    }
+
+}

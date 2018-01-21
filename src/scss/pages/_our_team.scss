@@ -1,0 +1,49 @@
+.our-team {
+   background-color: white;
+
+   .card {
+      float: left;
+      margin: 0;
+   }
+}
+
+.contact-card {
+
+   width: 100%;
+   border: 10px solid dimgray;
+   text-align: center;
+
+   &__text {
+      position: absolute;
+      color: white;
+      text-transform: uppercase;
+      font-size: 24pt;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all .3s;
+
+      &:hover,
+      &:active {
+         color: $teal;
+      }
+   }
+
+   .card__image {
+      opacity: 0;
+      visibility: hidden;
+   }
+}
+
+@media screen and (max-width: 650px) {
+   
+   .our-team {
+      .card {
+         width: 100%;
+         border: $default-margin solid white;
+         background-color: white;
+         box-sizing: border-box;
+      }
+   }
+
+}
